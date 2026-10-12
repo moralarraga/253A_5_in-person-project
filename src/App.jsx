@@ -65,7 +65,6 @@ function App() {
                 <li><a href="#projects" className="nav-link">Projects</a></li>
                 <li><a href="#contact" className="nav-link">Contact</a></li>
             </ul>
-            <!-- Mobile menu toggle (for bonus implementation) -->
             <div className="nav-toggle">
                 <span></span>
                 <span></span>
@@ -137,7 +136,7 @@ function App() {
                       </div>
                       <div className="skill-category">Frontend Framework</div>
                       <div className="skill-level">
-                          <div className="skill-progress" style="--skill-level: 90%"></div>
+                          <div className="skill-progress" style={{ "--skill-level": "90" }}></div>
                       </div>
                       <span className="skill-percentage">90%</span>
                   </div>
@@ -149,7 +148,7 @@ function App() {
                       </div>
                       <div className="skill-category">Styling</div>
                       <div className="skill-level">
-                          <div className="skill-progress" style="--skill-level: 95%"></div>
+                          <div className="skill-progress" style={{"--skill-level": "95%"}}></div>
                       </div>
                       <span className="skill-percentage">95%</span>
                   </div>
@@ -161,7 +160,7 @@ function App() {
                       </div>
                       <div className="skill-category">Design</div>
                       <div className="skill-level">
-                          <div className="skill-progress" style="--skill-level: 88%"></div>
+                          <div className="skill-progress" style={{"--skill-level": "88%"}}></div>
                       </div>
                       <span className="skill-percentage">88%</span>
                   </div>
@@ -173,7 +172,7 @@ function App() {
                       </div>
                       <div className="skill-category">Programming</div>
                       <div className="skill-level">
-                          <div className="skill-progress" style="--skill-level: 85%"></div>
+                          <div className="skill-progress" style={{"--skill-level": "85%"}}></div>
                       </div>
                       <span className="skill-percentage">85%</span>
                   </div>
@@ -185,7 +184,7 @@ function App() {
                       </div>
                       <div className="skill-category">Design Tools</div>
                       <div className="skill-level">
-                          <div className="skill-progress" style="--skill-level: 80%"></div>
+                          <div className="skill-progress" style={{"--skill-level": "80%"}}></div>
                       </div>
                       <span className="skill-percentage">80%</span>
                   </div>
@@ -197,7 +196,7 @@ function App() {
                       </div>
                       <div className="skill-category">Backend</div>
                       <div className="skill-level">
-                          <div className="skill-progress" style="--skill-level: 75%"></div>
+                          <div className="skill-progress" style={{"--skill-level": "75%"}}></div>
                       </div>
                       <span className="skill-percentage">75%</span>
                   </div>
@@ -210,8 +209,6 @@ function App() {
         <section id="projects" className="section">
           <div className="container">
               <h2>Featured Projects</h2>
-
-              <!-- TODO: Add JavaScript to make these filter buttons interactive -->
               <div className="filter-buttons">
                   <button className="filter-btn active" data-filter="all">All Projects</button>
                   <button className="filter-btn" data-filter="frontend">Frontend</button>
@@ -221,10 +218,9 @@ function App() {
               </div>
 
               <div className="projects-grid">
-                  <!-- TODO: Add data-category attribute for filtering -->
                   <div className="project-card featured" data-category="fullstack">
                       <div className="project-image">
-                          <img src="https://via.placeholder.com/400x250/4f46e5/ffffff?text=E-Commerce+App" alt="E-Commerce Platform">
+                          <img src="https://via.placeholder.com/400x250/4f46e5/ffffff?text=E-Commerce+App" alt="E-Commerce Platform" />
                           <div className="project-overlay">
                               <div className="project-links">
                                   <a href="#" className="project-link">
@@ -253,7 +249,7 @@ function App() {
 
                   <div className="project-card" data-category="frontend">
                       <div className="project-image">
-                          <img src="https://via.placeholder.com/400x250/059669/ffffff?text=Weather+App" alt="Weather Dashboard">
+                          <img src="https://via.placeholder.com/400x250/059669/ffffff?text=Weather+App" alt="Weather Dashboard" />
                           <div className="project-overlay">
                               <div className="project-links">
                                   <a href="#" className="project-link">
@@ -281,7 +277,7 @@ function App() {
 
                   <div className="project-card" data-category="webapp">
                       <div className="project-image">
-                          <img src="https://via.placeholder.com/400x250/dc2626/ffffff?text=Task+Manager" alt="Task Management App">
+                          <img src="https://via.placeholder.com/400x250/dc2626/ffffff?text=Task+Manager" alt="Task Management App" />
                           <div className="project-overlay">
                               <div className="project-links">
                                   <a href="#" className="project-link">
@@ -346,38 +342,36 @@ function App() {
               <h2>Get In Touch</h2>
               <div className="contact-content">
                   <p>I'm always interested in hearing about new opportunities and projects. Feel free to reach out!</p>
-
-                  <!-- TODO: Add JavaScript to validate this form in real-time -->
                   <form id="contact-form" className="contact-form">
                       <div className="form-grid">
                           <div className="form-group">
-                              <label for="name">Name *</label>
-                              <input type="text" id="name" name="name" required>
-                              <!-- TODO: Add error message element here -->
+                              <label htmlFor="name">Name *</label>
+                              <input type="text" id="name" name="name" required />
+                              
                           </div>
 
                           <div className="form-group">
-                              <label for="email">Email *</label>
-                              <input type="email" id="email" name="email" required>
-                              <!-- TODO: Add error message element here -->
+                              <label htmlFor="email">Email *</label>
+                              <input type="email" id="email" name="email" required />
+                              
                           </div>
 
                           <div className="form-group form-group-full">
-                              <label for="subject">Subject</label>
-                              <input type="text" id="subject" name="subject">
+                              <label htmlFor="subject">Subject</label>
+                              <input type="text" id="subject" name="subject" />
                           </div>
 
                           <div className="form-group form-group-full">
-                              <label for="message">Message *</label>
+                              <label htmlFor="message">Message *</label>
                               <textarea id="message" name="message" rows="5" required></textarea>
-                              <!-- TODO: Add error message element here -->
+                              
                           </div>
 
                           <div className="form-group form-group-full">
                               <button type="submit" className="btn btn-primary">Send Message</button>
                           </div>
                       </div>
-                      <!-- TODO: Add success message element here -->
+                    
                   </form>
               </div>
           </div>

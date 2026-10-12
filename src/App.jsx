@@ -53,13 +53,77 @@ function App() {
 
   return (
     <div className="portfolio">
-      {/* TODO: Add your navigation here */}
-      {/* HINT: Replace <a href="#home" class="nav-link"> with <a href="#home" className="nav-link"> */}
+      {
+        <nav id="navbar">
+            <div class="nav-brand">
+                <span>Lilia Mora</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" className="nav-link">Home</a></li>
+                <li><a href="#about" className="nav-link">About</a></li>
+                <li><a href="#skills" className="nav-link">Skills</a></li>
+                <li><a href="#projects" className="nav-link">Projects</a></li>
+                <li><a href="#contact" className="nav-link">Contact</a></li>
+            </ul>
+            <!-- Mobile menu toggle (for bonus implementation) -->
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    }
+    
       {/* HINT: Replace onclick with onClick={handleNavClick} */}
 
-      {/* TODO: Add your hero section here */}
+      {
+        <section id="home" className="hero">
+            <div className="hero-content">
+                <h1 className="hero-title">Lilia Mora</h1>
+                <p className="hero-subtitle">Frontend Developer & UI Designer</p>
+                <p className="hero-tagline">Creating beautiful, responsive web experiences with modern technologies</p>
+                <div className="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+        </section>
+      }
       
-      {/* TODO: Add your about section here */}
+      {
+        <section id="about" class="section">
+              <div class="container">
+                  <h2>About Me</h2>
+                  <div class="about-grid">
+                      <div class="about-text">
+                          <p>I am passionate about the technical aspects of networking and I enjoy a creative approach to problem solving.</p>
+                          <div class="about-details">
+                              <div class="detail-item">
+                                  <span class="detail-icon">📍</span>
+                                  <span>San Mateo, CA</span>
+                              </div>
+                              <div class="detail-item">
+                                  <span class="detail-icon">✉️</span>
+                                  <a href="mailto:mora.larraga@gmail.com">mora.larraga@gmail.com</a>
+                              </div>
+                              <div class="detail-item">
+                                  <span class="detail-icon">📱</span>
+                                  <span>(650) 200-8165</span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="about-availability">
+                          <h3>Currently Available For:</h3>
+                          <div class="availability-tags">
+                              <span class="tag tag-available">Freelance</span>
+                              <span class="tag tag-available">Full-Time</span>
+                              <span class="tag tag-available">Remote</span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </section>
+      }
       
       {/* TODO: Add your skills section here */}
       
@@ -71,6 +135,7 @@ function App() {
       {/* HINT: Inputs will use onChange for real-time validation */}
       
       {/* TODO: Add your footer here */}
+
     </div>
   )
 }

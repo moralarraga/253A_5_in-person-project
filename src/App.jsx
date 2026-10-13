@@ -34,8 +34,26 @@ function App() {
   // TODO: Add form submit handler
   // Replace: contactForm.addEventListener('submit', ...)
   // With: const handleFormSubmit = (e) => { ... }
+// Smooth scroll
+    const handleNavClick = (e) => {
+    e.preventDefault();
+    const targetId = e.currentTarget.getAttribute('href');
+    const targetSection = document.querySelector(targetId);
+    if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    };
 
-
+    // Project filtering
+    const handleFilterClick = (e) => {
+    const filterValue = e.currentTarget.getAttribute('data-filter');
+    document.querySelectorAll('.project-card').forEach(card => {
+        const match = filterValue === 'all' || card.getAttribute('data-category') === filterValue;
+        card.style.display = match ? 'block' : 'none';
+    });
+    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+    e.currentTarget.classList.add('active');
+    };
   // ============================================
   // PART 2: JSX RETURN STATEMENT
   // ============================================
@@ -51,6 +69,7 @@ function App() {
   // This week we're building a MONOLITHIC component (one big component)
   // Week 8 will teach you how to break this into smaller pieces
 
+
   return (
     <div className="portfolio">
       {
@@ -59,11 +78,11 @@ function App() {
                 <span>Lilia Mora</span>
             </div>
             <ul className="nav-menu">
-                <li><a href="#home" className="nav-link">Home</a></li>
-                <li><a href="#about" className="nav-link">About</a></li>
-                <li><a href="#skills" className="nav-link">Skills</a></li>
-                <li><a href="#projects" className="nav-link">Projects</a></li>
-                <li><a href="#contact" className="nav-link">Contact</a></li>
+                <li><a href="#home" className="nav-link" onClick={handleNavClick}>Home</a></li>
+                <li><a href="#about" className="nav-link" onClick={handleNavClick}>About</a></li>
+                <li><a href="#skills" className="nav-link" onClick={handleNavClick}>Skills</a></li>
+                <li><a href="#projects" className="nav-link" onClick={handleNavClick}>Projects</a></li>
+                <li><a href="#contact" className="nav-link" onClick={handleNavClick}>Contact</a></li>
             </ul>
             <div className="nav-toggle">
                 <span></span>
@@ -210,11 +229,11 @@ function App() {
           <div className="container">
               <h2>Featured Projects</h2>
               <div className="filter-buttons">
-                  <button className="filter-btn active" data-filter="all">All Projects</button>
-                  <button className="filter-btn" data-filter="frontend">Frontend</button>
-                  <button className="filter-btn" data-filter="fullstack">Full-Stack</button>
-                  <button className="filter-btn" data-filter="design">Design</button>
-                  <button className="filter-btn" data-filter="webapp">Web App</button>
+                  <button onClick={handleFilterClick} className="filter-btn active" data-filter="all">All Projects</button>
+                  <button onClick={handleFilterClick} className="filter-btn" data-filter="frontend">Frontend</button>
+                  <button onClick={handleFilterClick} className="filter-btn" data-filter="fullstack">Full-Stack</button>
+                  <button onClick={handleFilterClick} className="filter-btn" data-filter="design">Design</button>
+                  <button onClick={handleFilterClick} className="filter-btn" data-filter="webapp">Web App</button>
               </div>
 
               <div className="projects-grid">
